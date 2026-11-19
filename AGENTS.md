@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project architecture
+- Serve the standalone studio website from a public static folder, with the home route embedding it, so its delivered HTML, CSS, and JavaScript stay independently usable.

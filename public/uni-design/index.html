@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F4EDE1" />
+    <title>UnI Design Group | Architecture &amp; Interiors in Pune</title>
+    <meta
+      name="description"
+      content="Thoughtful architectural and interior environments shaped around people, purpose and detail. UnI Design Group, Pune, India."
+    />
+    <meta property="og:title" content="UnI Design Group | Architecture &amp; Interiors in Pune" />
+    <meta
+      property="og:description"
+      content="Thoughtful architectural and interior environments shaped around people, purpose and detail. UnI Design Group, Pune, India."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/uni-design/style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script defer src="/uni-design/script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="site-header">
+      <a class="wordmark" href="#home" aria-label="UnI Design Group home">
+        <span class="wordmark__symbol">UnI</span>
+        <span class="wordmark__name">Design Group</span>
+      </a>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open navigation menu"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#studio">Studio</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="home" aria-labelledby="hero-heading">
+        <img
+          class="hero__image"
+          src="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
+          alt="Warm, light-filled contemporary home with considered interior details"
+          fetchpriority="high"
+        />
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__content page-wrap">
+          <p class="eyebrow hero__eyebrow" data-hero-intro>
+            Architecture · Interior · Visualisation
+          </p>
+          <h1 class="display display--hero" id="hero-heading" data-hero-heading>
+            Designing spaces<br />that feel distinct.
+          </h1>
+          <p class="hero__description" data-hero-intro>
+            UnI Design Group creates thoughtful architectural and interior environments shaped around
+            people, purpose and detail.
+          </p>
+          <div class="hero__actions" data-hero-intro>
+            <a class="button button--light" href="#work">Explore projects <span aria-hidden="true">↗</span></a>
+            <a class="text-link text-link--light" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero__footer page-wrap" data-hero-intro>
+          <span>UnI Design Group · Pune, India</span>
+          <a href="#studio">Scroll to enter <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="studio-section section-pad" id="studio" aria-labelledby="studio-heading">
+        <div class="page-wrap studio-layout">
+          <p class="eyebrow reveal">01 — The studio</p>
+          <div class="studio-copy reveal">
+            <h2 class="display" id="studio-heading">Spaces shaped<br />by purpose.</h2>
+            <p class="section-copy">
+              From the first spatial idea to the final material detail, we bring architecture,
+              interiors and visualisation together in one considered design process.
+            </p>
+            <p class="studio-caption">A thoughtful approach to every detail.</p>
+          </div>
+          <span class="studio-index" aria-hidden="true">UnI / 01</span>
+        </div>
+      </section>
+
+      <section class="walkthrough" id="walkthrough" aria-labelledby="walkthrough-heading">
+        <img
+          class="walkthrough__poster"
+          src="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
+          alt=""
+          aria-hidden="true"
+        />
+        <video
+          class="walkthrough__video"
+          id="walkthrough-video"
+          muted
+          playsinline
+          preload="auto"
+          poster="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
+          aria-label="Interior walkthrough film controlled by scrolling"
+        >
+          <source
+            src="/__l5e/assets-v1/c304a319-fe93-4ec9-b387-6402bea31395/walkthrough.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="walkthrough__shade" aria-hidden="true"></div>
+        <div class="walkthrough__content page-wrap reveal" id="walkthrough-content">
+          <p class="eyebrow eyebrow--light">A closer look · UnI Design Group</p>
+          <h2 class="display display--light" id="walkthrough-heading">Step inside<br />the design.</h2>
+          <p class="walkthrough__discipline">Architecture · Interior · Detail</p>
+        </div>
+        <div class="walkthrough__footer page-wrap" id="walkthrough-footer">
+          <span>Scroll to control the film <span aria-hidden="true">↓</span></span>
+          <span>Scroll down to move forward · Up to rewind</span>
+        </div>
+        <div class="walkthrough__progress" aria-hidden="true">
+          <span id="walkthrough-progress"></span>
+        </div>
+        <p class="sr-only" id="walkthrough-status" aria-live="polite"></p>
+      </section>
+
+      <section
+        class="expertise-section section-pad"
+        id="expertise"
+        aria-labelledby="expertise-heading"
+      >
+        <div class="page-wrap">
+          <div class="section-head reveal">
+            <p class="eyebrow">02 — Expertise</p>
+            <h2 class="display" id="expertise-heading">What we do.</h2>
+            <p class="section-copy">Four connected disciplines. One consistent design language.</p>
+          </div>
+          <div class="services-list" aria-label="Design services">
+            <article class="service-row reveal">
+              <span class="service-row__number">01</span>
+              <div class="service-row__body">
+                <h3 class="service-row__title">Architecture</h3>
+                <p>Spatial planning and architectural design.</p>
+              </div>
+              <a class="service-row__link" href="#contact" aria-label="Explore Architecture service">
+                <span>Explore service ↗</span><span class="service-row__arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article class="service-row reveal">
+              <span class="service-row__number">02</span>
+              <div class="service-row__body">
+                <h3 class="service-row__title">Interior Design</h3>
+                <p>Thoughtful residential and commercial interiors.</p>
+              </div>
+              <a class="service-row__link" href="#contact" aria-label="Explore Interior Design service">
+                <span>Explore service ↗</span><span class="service-row__arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article class="service-row reveal">
+              <span class="service-row__number">03</span>
+              <div class="service-row__body">
+                <h3 class="service-row__title">3D Visualisation</h3>
+                <p>Visualising spaces before they are built.</p>
+              </div>
+              <a class="service-row__link" href="#contact" aria-label="Explore 3D Visualisation service">
+                <span>Explore service ↗</span><span class="service-row__arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article class="service-row reveal">
+              <span class="service-row__number">04</span>
+              <div class="service-row__body">
+                <h3 class="service-row__title">Liaisoning &amp; Sanctioning</h3>
+                <p>Coordination and approval services.</p>
+              </div>
+              <a
+                class="service-row__link"
+                href="#contact"
+                aria-label="Explore Liaisoning and Sanctioning service"
+              >
+                <span>Explore service ↗</span><span class="service-row__arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-section section-pad" id="work" aria-labelledby="work-heading">
+        <div class="page-wrap">
+          <div class="section-head section-head--split reveal">
+            <div>
+              <p class="eyebrow">03 — Selected work</p>
+              <h2 class="display" id="work-heading">Spaces, made<br />tangible.</h2>
+            </div>
+            <p class="work-label">Portfolio / 2026</p>
+          </div>
+          <div class="project-grid">
+            <article class="project reveal">
+              <a class="project__image project__image--residence" href="#contact" aria-label="Discover the MUDRA residence project">
+                <span class="project__image-note">M / 01</span>
+                <span class="project__image-detail" aria-hidden="true"></span>
+              </a>
+              <p class="project__meta">01 — Mudra, 3BHK Residence · Pune</p>
+              <h3>MUDRA</h3>
+              <p class="project__description">
+                A warm, considered home shaped by material, light and everyday ritual.
+              </p>
+              <a class="text-link project__link" href="#contact">Discover the project <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="project reveal">
+              <a class="project__image project__image--material" href="#contact" aria-label="Discover the material composition study">
+                <span class="project__image-note">M / 02</span>
+                <span class="project__image-detail" aria-hidden="true"></span>
+              </a>
+              <p class="project__meta">02 — Material Composition · Interior · Visual study</p>
+              <h3>MATERIAL COMPOSITION</h3>
+              <p class="project__description">
+                An exploration of crafted detail, tactile surfaces and quiet contrast.
+              </p>
+              <a class="text-link project__link" href="#contact">Discover the project <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="project reveal">
+              <a class="project__image project__image--architecture" href="#contact" aria-label="Discover the architecture and light study">
+                <span class="project__image-note">M / 03</span>
+                <span class="project__image-detail" aria-hidden="true"></span>
+              </a>
+              <p class="project__meta">03 — Architecture &amp; Light · Architecture · Visual study</p>
+              <h3>ARCHITECTURE &amp; LIGHT</h3>
+              <p class="project__description">
+                A study in volume, shadow and the relationship between inside and out.
+              </p>
+              <a class="text-link project__link" href="#contact">Discover the project <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+          <a class="text-link work-all" href="#contact">View all projects <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="process-section section-pad" id="process" aria-labelledby="process-heading">
+        <div class="page-wrap process-layout">
+          <div class="section-head reveal">
+            <p class="eyebrow">04 — The process</p>
+            <h2 class="display" id="process-heading">From first thought<br />to finished space.</h2>
+          </div>
+          <ol class="process-list" id="process-list">
+            <li class="process-step reveal">
+              <span class="process-step__number">01</span>
+              <div><h3>Discover</h3><p>Understanding context, lifestyle and intent.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span class="process-step__number">02</span>
+              <div><h3>Concept</h3><p>Establishing proportion, mood and spatial direction.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span class="process-step__number">03</span>
+              <div><h3>Visualise</h3><p>Seeing the atmosphere before it is built.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span class="process-step__number">04</span>
+              <div><h3>Develop</h3><p>Resolving material, drawings and detail.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span class="process-step__number">05</span>
+              <div><h3>Realise</h3><p>Bringing the design into the finished space.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact-section section-pad" id="contact" aria-labelledby="contact-heading">
+        <div class="page-wrap contact-layout">
+          <div class="contact-intro reveal">
+            <p class="eyebrow">05 — Begin a conversation</p>
+            <h2 class="display" id="contact-heading">Have a space<br />in mind?</h2>
+            <p class="section-copy">
+              Tell us what you are imagining. We would love to understand the brief and explore what it
+              could become.
+            </p>
+          </div>
+          <form class="enquiry-form reveal" id="enquiry-form">
+            <div class="form-row">
+              <label class="field"><span>Name</span><input name="name" autocomplete="name" placeholder="Your name" required /></label>
+              <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+            </div>
+            <div class="form-row">
+              <label class="field"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" placeholder="+91 00000 00000" /></label>
+              <label class="field"><span>Location</span><input name="location" autocomplete="address-level2" placeholder="City / Location" /></label>
+            </div>
+            <label class="field">
+              <span>Project type</span>
+              <select name="projectType" required>
+                <option value="" disabled selected>Select a project type</option>
+                <option>Residential Interior</option>
+                <option>Commercial Interior</option>
+                <option>Architecture</option>
+                <option>3D Visualisation</option>
+                <option>Liaisoning &amp; Sanctioning</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Project details</span>
+              <textarea
+                name="details"
+                rows="4"
+                placeholder="Tell us about your space, location, requirements and vision..."
+                required
+              ></textarea>
+            </label>
+            <div class="form-submit-row">
+              <button class="button button--dark" type="submit">Prepare enquiry <span aria-hidden="true">→</span></button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-wrap">
+        <div class="footer-cta">
+          <div><p class="eyebrow eyebrow--light">A space begins with a conversation.</p><p>Let's start a conversation.</p></div>
+          <a class="button button--outline" href="#contact">Book a free consultation <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="footer-wordmark">UnI <span>Design Group</span></p>
+        <p class="footer-location">Pune, India</p>
+        <div class="footer-bottom"><span>© UnI Design Group</span><a href="#home">Back to top ↑</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
