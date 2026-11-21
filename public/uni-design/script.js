@@ -195,9 +195,18 @@ function setupScrollDrivenVideo() {
       onUpdate: (self) => {
         requestedTime = getVideoTime(self.progress, walkthroughVideo.duration || 0);
         gsap.set(progressBar, { scaleX: self.progress });
-        gsap.set(".hero__content, .hero__footer", {
-          opacity: 1 - Math.min(1, self.progress * 2.4),
-          y: -18 * self.progress,
+        const scenes = document.querySelectorAll("[data-video-scene]");
+        const sceneCount = scenes.length;
+        if (sceneCount) {
+          const scenePosition = self.progress * sceneCount;
+          const activeScene = Math.min(sceneCount - 1, Math.floor(scenePosition));
+          scenes.forEach((scene, index) => {
+            scene.classList.toggle("is-active", index === activeScene);
+          });
+          walkthrough.classList.toggle("story-started", self.progress > 0.055);
+        }
+        gsap.set(".hero__footer", {
+          opacity: 1 - Math.min(0.45, self.progress * 0.45),
         });
       },
       onRefresh: (self) => {
