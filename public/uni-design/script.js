@@ -99,6 +99,20 @@ function setupRevealAnimations() {
   }
 }
 
+function setupHeroImageFallback() {
+  const hero = document.querySelector(".hero");
+  const heroImage = document.querySelector(".hero__image");
+  if (!hero || !heroImage) return;
+
+  const markImageUnavailable = () => {
+    hero.classList.add("has-image-error");
+    heroImage.hidden = true;
+  };
+
+  heroImage.addEventListener("error", markImageUnavailable, { once: true });
+  if (heroImage.complete && heroImage.naturalWidth === 0) markImageUnavailable();
+}
+
 function setupHeroIntro() {
   if (reducedMotion.matches || !window.gsap) return;
 
@@ -294,6 +308,7 @@ function setupEnquiryForm() {
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
   setupNavigation();
+setupHeroImageFallback();
   setupRevealAnimations();
   setupHeroIntro();
   setupScrollDrivenVideo();
