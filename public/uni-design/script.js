@@ -222,7 +222,9 @@ function setupLenisAndScroll() {
     return;
   }
 
-  if (!window.Lenis) {
+  // Lenis uses GSAP's ticker. Fall back to native scrolling if either CDN
+  // dependency is unavailable instead of throwing a ReferenceError.
+  if (!window.Lenis || !window.gsap) {
     window.addEventListener("scroll", () => updateHeader(window.scrollY), { passive: true });
     return;
   }
