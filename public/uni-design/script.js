@@ -101,16 +101,16 @@ function setupRevealAnimations() {
 
 function setupHeroImageFallback() {
   const hero = document.querySelector(".hero");
-  const heroImage = document.querySelector(".hero__image");
-  if (!hero || !heroImage) return;
+  const poster = document.querySelector(".hero__poster");
+  if (!hero || !poster) return;
 
   const markImageUnavailable = () => {
     hero.classList.add("has-image-error");
-    heroImage.hidden = true;
+    poster.hidden = true;
   };
 
-  heroImage.addEventListener("error", markImageUnavailable, { once: true });
-  if (heroImage.complete && heroImage.naturalWidth === 0) markImageUnavailable();
+  poster.addEventListener("error", markImageUnavailable, { once: true });
+  if (poster.complete && poster.naturalWidth === 0) markImageUnavailable();
 }
 
 function setupHeroIntro() {
@@ -141,9 +141,21 @@ function setWalkthroughFallback() {
 function setupScrollDrivenVideo() {
   if (!walkthrough || !walkthroughVideo || !progressBar) return;
   const source = walkthroughVideo.querySelector("source");
+  const scenes = Array.from(document.querySelectorAll("[data-video-scene]"));
+
+  const updateStory = (progress) => {
+    const hasStoryStarted = progress > 0.055;
+    const storyProgress = Math.max(0, (progress - 0.055) / 0.945);
+    const activeScene = Math.min(scenes.length - 1, Math.floor(storyProgress * scenes.length));
+    scenes.forEach((scene, index) => {
+      scene.classList.toggle("is-active", hasStoryStarted && index === activeScene);
+    });
+    walkthrough.classList.toggle("story-started", hasStoryStarted);
+  };
 
   if (reducedMotion.matches) {
     walkthroughVideo.pause();
+    updateStory(0);
     return;
   }
 
@@ -156,7 +168,8 @@ function setupScrollDrivenVideo() {
   }, { once: true });
 
   if (!window.gsap || !window.ScrollTrigger) {
-    walkthroughVideo.removeAttribute("src");
+    source?.removeAttribute("src");
+    walkthroughVideo.load();
     setWalkthroughFallback();
     return;
   }
@@ -181,7 +194,7 @@ function setupScrollDrivenVideo() {
   };
 
   const createTrigger = () => {
-    if (trigger) trigger.kill();
+    trigger?.kill();
     trigger = ScrollTrigger.create({
       trigger: walkthrough,
       start: "top top",
@@ -195,22 +208,14 @@ function setupScrollDrivenVideo() {
       onUpdate: (self) => {
         requestedTime = getVideoTime(self.progress, walkthroughVideo.duration || 0);
         gsap.set(progressBar, { scaleX: self.progress });
-        const scenes = document.querySelectorAll("[data-video-scene]");
-        const sceneCount = scenes.length;
-        if (sceneCount) {
-          const storyProgress = Math.max(0, (self.progress - 0.055) / 0.945);
-          const activeScene = Math.min(sceneCount - 1, Math.floor(storyProgress * sceneCount));
-          scenes.forEach((scene, index) => {
-            scene.classList.toggle("is-active", self.progress > 0.055 && index === activeScene);
-          });
-          walkthrough.classList.toggle("story-started", self.progress > 0.055);
-        }
+        updateStory(self.progress);
         gsap.set(".hero__footer", {
           opacity: 1 - Math.min(0.45, self.progress * 0.45),
         });
       },
       onRefresh: (self) => {
         requestedTime = getVideoTime(self.progress, walkthroughVideo.duration || 0);
+        updateStory(self.progress);
       },
     });
   };
