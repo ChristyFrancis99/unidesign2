@@ -1474,3 +1474,9 @@ textarea:focus-visible {
   .hero-scene { opacity: 1; transform: none; }
   .hero-scene:not(:first-child) { display: none; }
 }
+
+/* Keep the static hero clean when motion is reduced or the poster is unavailable. */
+.hero.has-image-error .hero__poster { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-scenes { display: none; }
+}
