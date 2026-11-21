@@ -152,6 +152,7 @@ function setupScrollDrivenVideo() {
   source?.addEventListener("error", handleError);
   walkthroughVideo.addEventListener("loadeddata", () => {
     walkthrough.classList.add("is-video-ready");
+    walkthroughVideo.pause();
   }, { once: true });
 
   if (!window.gsap || !window.ScrollTrigger) {
@@ -194,11 +195,9 @@ function setupScrollDrivenVideo() {
       onUpdate: (self) => {
         requestedTime = getVideoTime(self.progress, walkthroughVideo.duration || 0);
         gsap.set(progressBar, { scaleX: self.progress });
-        gsap.to("#walkthrough-content, #walkthrough-footer", {
-          opacity: 1 - Math.min(1, self.progress * 3.5),
-          y: -12 * self.progress,
-          duration: 0.12,
-          overwrite: true,
+        gsap.set(".hero__content, .hero__footer", {
+          opacity: 1 - Math.min(1, self.progress * 2.4),
+          y: -18 * self.progress,
         });
       },
       onRefresh: (self) => {
@@ -213,6 +212,8 @@ function setupScrollDrivenVideo() {
       return;
     }
     currentTime = 0;
+    requestedTime = 0;
+    walkthroughVideo.pause();
     animationFrame = window.requestAnimationFrame(settleFrame);
     createTrigger();
     ScrollTrigger.refresh();
