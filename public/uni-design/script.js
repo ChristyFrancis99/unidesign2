@@ -19,7 +19,7 @@ const reducedMotion = typeof window !== "undefined"
 const header = typeof document !== "undefined" ? document.querySelector("#site-header") : null;
 const menuToggle = typeof document !== "undefined" ? document.querySelector("#menu-toggle") : null;
 const navigation = typeof document !== "undefined" ? document.querySelector("#primary-nav") : null;
-const walkthrough = typeof document !== "undefined" ? document.querySelector("#walkthrough") : null;
+const walkthrough = typeof document !== "undefined" ? document.querySelector("#home") : null;
 const walkthroughVideo = typeof document !== "undefined"
   ? document.querySelector("#walkthrough-video")
   : null;
