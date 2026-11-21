@@ -59,12 +59,27 @@
     <main id="main-content">
       <section class="hero" id="home" aria-labelledby="hero-heading">
         <img
-          class="hero__image"
+          class="walkthrough__poster hero__poster"
           src="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
-          alt="Warm, light-filled contemporary home with considered interior details"
+          alt=""
+          aria-hidden="true"
           fetchpriority="high"
         />
-        <div class="hero__shade" aria-hidden="true"></div>
+        <video
+          class="walkthrough__video hero__video"
+          id="walkthrough-video"
+          muted
+          playsinline
+          preload="auto"
+          poster="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
+          aria-label="Interior walkthrough film controlled by scrolling"
+        >
+          <source
+            src="/__l5e/assets-v1/c304a319-fe93-4ec9-b387-6402bea31395/walkthrough.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="walkthrough__shade hero__shade" aria-hidden="true"></div>
         <div class="hero__content page-wrap">
           <p class="eyebrow hero__eyebrow" data-hero-intro>
             Architecture · Interior · Visualisation
@@ -81,10 +96,14 @@
             <a class="text-link text-link--light" href="#contact">Start a project <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <div class="hero__footer page-wrap" data-hero-intro>
+        <div class="hero__footer page-wrap" data-hero-intro id="walkthrough-footer">
           <span>UnI Design Group · Pune, India</span>
-          <a href="#studio">Scroll to enter <span aria-hidden="true">↓</span></a>
+          <span>Scroll to explore · Up to rewind</span>
         </div>
+        <div class="walkthrough__progress" aria-hidden="true">
+          <span id="walkthrough-progress"></span>
+        </div>
+        <p class="sr-only" id="walkthrough-status" aria-live="polite"></p>
       </section>
 
       <section class="studio-section section-pad" id="studio" aria-labelledby="studio-heading">
@@ -100,43 +119,6 @@
           </div>
           <span class="studio-index" aria-hidden="true">UnI / 01</span>
         </div>
-      </section>
-
-      <section class="walkthrough" id="walkthrough" aria-labelledby="walkthrough-heading">
-        <img
-          class="walkthrough__poster"
-          src="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
-          alt=""
-          aria-hidden="true"
-        />
-        <video
-          class="walkthrough__video"
-          id="walkthrough-video"
-          muted
-          playsinline
-          preload="auto"
-          poster="/__l5e/assets-v1/66a6eaae-b9ee-412e-95a3-69cb02d15df2/poster.jpg"
-          aria-label="Interior walkthrough film controlled by scrolling"
-        >
-          <source
-            src="/__l5e/assets-v1/c304a319-fe93-4ec9-b387-6402bea31395/walkthrough.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="walkthrough__shade" aria-hidden="true"></div>
-        <div class="walkthrough__content page-wrap reveal" id="walkthrough-content">
-          <p class="eyebrow eyebrow--light">A closer look · UnI Design Group</p>
-          <h2 class="display display--light" id="walkthrough-heading">Step inside<br />the design.</h2>
-          <p class="walkthrough__discipline">Architecture · Interior · Detail</p>
-        </div>
-        <div class="walkthrough__footer page-wrap" id="walkthrough-footer">
-          <span>Scroll to control the film <span aria-hidden="true">↓</span></span>
-          <span>Scroll down to move forward · Up to rewind</span>
-        </div>
-        <div class="walkthrough__progress" aria-hidden="true">
-          <span id="walkthrough-progress"></span>
-        </div>
-        <p class="sr-only" id="walkthrough-status" aria-live="polite"></p>
       </section>
 
       <section
