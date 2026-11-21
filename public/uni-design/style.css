@@ -1480,3 +1480,10 @@ textarea:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .hero-scenes { display: none; }
 }
+
+/* The walkthrough MP4 is the source of truth; keep a warm fallback before its first frame. */
+.hero {
+  background:
+    radial-gradient(ellipse at 78% 42%, rgb(155 113 82 / 48%), transparent 48%),
+    linear-gradient(115deg, #211c19 0%, #39291f 48%, #68432d 100%);
+}
