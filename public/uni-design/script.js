@@ -99,19 +99,6 @@ function setupRevealAnimations() {
   }
 }
 
-function setupHeroImageFallback() {
-  const hero = document.querySelector(".hero");
-  const poster = document.querySelector(".hero__poster");
-  if (!hero || !poster) return;
-
-  const markImageUnavailable = () => {
-    hero.classList.add("has-image-error");
-    poster.hidden = true;
-  };
-
-  poster.addEventListener("error", markImageUnavailable, { once: true });
-  if (poster.complete && poster.naturalWidth === 0) markImageUnavailable();
-}
 
 function setupHeroIntro() {
   if (reducedMotion.matches || !window.gsap) return;
@@ -323,7 +310,6 @@ function setupEnquiryForm() {
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
   setupNavigation();
-setupHeroImageFallback();
   setupRevealAnimations();
   setupHeroIntro();
   setupScrollDrivenVideo();
