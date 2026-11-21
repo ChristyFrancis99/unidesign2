@@ -198,10 +198,10 @@ function setupScrollDrivenVideo() {
         const scenes = document.querySelectorAll("[data-video-scene]");
         const sceneCount = scenes.length;
         if (sceneCount) {
-          const scenePosition = self.progress * sceneCount;
-          const activeScene = Math.min(sceneCount - 1, Math.floor(scenePosition));
+          const storyProgress = Math.max(0, (self.progress - 0.055) / 0.945);
+          const activeScene = Math.min(sceneCount - 1, Math.floor(storyProgress * sceneCount));
           scenes.forEach((scene, index) => {
-            scene.classList.toggle("is-active", index === activeScene);
+            scene.classList.toggle("is-active", self.progress > 0.055 && index === activeScene);
           });
           walkthrough.classList.toggle("story-started", self.progress > 0.055);
         }
