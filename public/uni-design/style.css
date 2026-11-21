@@ -184,6 +184,29 @@ textarea:focus-visible {
 }
 
 .hero__image,
+.hero.has-image-error {
+  background:
+    radial-gradient(ellipse at 78% 42%, color-mix(in srgb, #9b7152 48%, transparent), transparent 48%),
+    linear-gradient(115deg, #211c19 0%, #39291f 48%, #68432d 100%);
+}
+
+.hero.has-image-error::before {
+  position: absolute;
+  inset: 0 0 0 48%;
+  border-left: 1px solid color-mix(in srgb, var(--ivory) 9%, transparent);
+  background:
+    linear-gradient(90deg, transparent 49.8%, color-mix(in srgb, var(--ivory) 10%, transparent) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, color-mix(in srgb, var(--ivory) 8%, transparent) 50%, transparent 50.2%);
+  background-size: 100% 100%, 100% 100%;
+  content: "";
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.hero.has-image-error .hero__image {
+  display: none;
+}
+
 .hero__shade {
   position: absolute;
   inset: 0;
